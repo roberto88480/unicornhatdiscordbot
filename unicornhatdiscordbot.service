@@ -1,0 +1,12 @@
+[Unit]
+Description=Unicornhat Discord Bot
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/opt/git/unicornhatdiscordbot/unicornhatdiscordbot.py --sort
+RestartSec=10
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
