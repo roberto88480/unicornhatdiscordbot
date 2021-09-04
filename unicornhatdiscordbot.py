@@ -20,7 +20,8 @@ GUILDID = int(os.getenv('DISCORD_GUILD_ID'))
 
 import discord
 
-intents = discord.Intents.default()
+intents = discord.Intents.none()
+intents.guilds = True
 intents.members = True
 intents.presences = True
 
