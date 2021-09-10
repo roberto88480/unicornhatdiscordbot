@@ -33,11 +33,11 @@ unicornhat.set_layout(unicornhat.AUTO)
 unicornhat.brightness(0.7)
 
 if args.horizontal:
-    unicornhat.rotation(90)
+	unicornhat.rotation(90)
 else:
-    unicornhat.rotation(0)
+	unicornhat.rotation(0)
 
-unicornhatheight,unicornhatwidth=unicornhat.get_shape()
+unicornhatwidth,unicornhatheight=unicornhat.get_shape()
 
 def redraw_unicornpihat(members):
 	i = 0;
@@ -51,9 +51,9 @@ def redraw_unicornpihat(members):
 		r,g,b=member.color.r,member.color.g,member.color.b
 		if member.color.value < 100:
 			r,g,b = 150,150,150
-                unicornhat.set_pixel(math.floor(i/unicornhatwidth),math.floor(i%unicornhatwidth),r,g,b)
+		unicornhat.set_pixel(math.floor(i/unicornhatheight),math.floor(i%unicornhatheight),r,g,b)
 		i+=1
-		if i >= unicornhatwidth*unicornhatheight: break
+		if i >= unicornhatheight*unicornhatwidth: break
 	unicornhat.show()
 
 @client.event
