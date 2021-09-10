@@ -30,8 +30,12 @@ client = discord.Client(intents=intents)
 import unicornhat
 
 unicornhat.set_layout(unicornhat.AUTO)
-unicornhat.rotation(0)
 unicornhat.brightness(0.7)
+
+if args.horizontal:
+    unicornhat.rotation(90)
+else:
+    unicornhat.rotation(0)
 
 unicornhatheight,unicornhatwidth=unicornhat.get_shape()
 
@@ -47,10 +51,7 @@ def redraw_unicornpihat(members):
 		r,g,b=member.color.r,member.color.g,member.color.b
 		if member.color.value < 100:
 			r,g,b = 150,150,150
-		if args.horizontal:
-			unicornhat.set_pixel(math.floor(i%unicornhatheight),math.floor(i/unicornhatheight),r,g,b)
-		else:
-			unicornhat.set_pixel(math.floor(i/unicornhatwidth),math.floor(i%unicornhatwidth),r,g,b)
+                unicornhat.set_pixel(math.floor(i/unicornhatwidth),math.floor(i%unicornhatwidth),r,g,b)
 		i+=1
 		if i >= unicornhatwidth*unicornhatheight: break
 	unicornhat.show()
