@@ -42,7 +42,7 @@ unicornhatwidth,unicornhatheight=unicornhat.get_shape()
 def redraw_unicornpihat(members):
 	i = 0;
 	if args.sort:
-		members.sort(key=lambda member: member.color.value, reverse=True)
+		members.sort(key=lambda member: member.top_role.position, reverse=True)
 	if args.verbose: print(f'len(members): {len(members)}')
 	unicornhat.clear()
 	for member in members:
