@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/git/unicornhatdiscordbot/unicornhatdiscordbot.py --sort
+ExecStart=/opt/git/unicornhatdiscordbot/venv/bin/python3 /opt/git/unicornhatdiscordbot/unicornhatdiscordbot.py --sort
 RestartSec=10
 Restart=on-failure
 
