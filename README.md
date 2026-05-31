@@ -14,7 +14,7 @@ apt install python3 python3-pip python3-venv
 
 # install requirements in venv
 python -m venv ./venv
-./venv/pin/pip3 install -r requirements.txt
+./venv/bin/pip3 install -r requirements.txt
 
 # run
 ./venv/bin/python3 unicornhatdiscordbot.py --sort
