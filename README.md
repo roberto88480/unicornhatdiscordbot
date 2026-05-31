@@ -10,13 +10,14 @@ I developed this for a **Raspberry Pi Zero** with a [Unicorn pHAT](https://shop.
 ## Installation (Debian / Raspberry Pi OS)
 ```bash
 # Python 3
-apt install pythpn3 python3-pip python3-dotenv
+apt install python3 python3-pip python3-venv
 
-# Unicornhat Library (github.com/pimoroni/unicorn-hat)
-pip3 install unicornhat 
+# install requirements in venv
+python -m venv ./venv
+./venv/pin/pip3 install -r requirements.txt
 
-# Discord Bot Library
-pip3 install discord.py
+# run
+./venv/bin/python3 unicornhatdiscordbot.py --sort
 ```
 
 ## Configuration
